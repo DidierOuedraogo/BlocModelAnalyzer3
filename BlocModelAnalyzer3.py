@@ -174,6 +174,33 @@ st.markdown("""
         margin: 1rem 0;
         color: var(--primary);
     }
+    
+    /* Feature explanation */
+    .feature-box {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-title {
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .feature-title span {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+    .feature-description {
+        color: #555;
+        font-size: 0.95rem;
+        margin-left: 1.7rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -186,6 +213,56 @@ st.markdown("""
     <div class="author">Développé par Didier Ouedraogo, P.Geo</div>
 </div>
 """, unsafe_allow_html=True)
+
+# Explication des fonctionnalités
+st.markdown('<div class="card">', unsafe_allow_html=True)
+st.markdown('<div class="card-title">✨ Fonctionnalités de l\'application</div>', unsafe_allow_html=True)
+
+st.markdown("""
+<div class="feature-box">
+    <div class="feature-title"><span>📊</span> Analyse de modèles de blocs</div>
+    <p class="feature-description">
+        Importez et analysez vos fichiers de modèles de blocs miniers aux formats CSV ou Excel. L'application détecte automatiquement les colonnes de coordonnées, teneurs et autres attributs pour faciliter l'analyse.
+    </p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-title"><span>📐</span> Contraintes spatiales DXF</div>
+    <p class="feature-description">
+        Appliquez des contraintes spatiales à votre analyse en important des fichiers DXF d'enveloppes minéralisées ou de surfaces (topographie, fonds de fosse). Seuls les blocs respectant ces contraintes seront inclus dans l'analyse.
+    </p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-title"><span>🔍</span> Filtrage avancé</div>
+    <p class="feature-description">
+        Filtrez vos données selon les coordonnées X, Y, Z, les teneurs, ou tout attribut catégoriel. Créez des sous-ensembles précis du modèle pour des analyses ciblées et des évaluations de ressources adaptées à différents scénarios.
+    </p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-title"><span>📈</span> Statistiques descriptives</div>
+    <p class="feature-description">
+        Obtenez des statistiques complètes sur vos données filtrées : nombre de blocs, tonnage total, teneurs minimales/maximales/moyennes, écart-type, coefficient de variation et distribution des teneurs sous forme d'histogramme.
+    </p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-title"><span>📉</span> Courbes tonnage-teneur</div>
+    <p class="feature-description">
+        Générez des courbes tonnage-teneur interactives pour déterminer l'impact des teneurs de coupure sur le tonnage, la teneur moyenne et le contenu métallique. Évaluez rapidement différents scénarios d'exploitation.
+    </p>
+</div>
+
+<div class="feature-box">
+    <div class="feature-title"><span>💾</span> Export des résultats</div>
+    <p class="feature-description">
+        Exportez vos résultats d'analyse (statistiques, courbes tonnage-teneur) aux formats CSV ou Excel pour les intégrer dans des rapports ou les analyser avec d'autres outils.
+    </p>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
 
 # Fonctions principales
 def is_point_in_mesh(point, mesh):
